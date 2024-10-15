@@ -15,7 +15,7 @@ import {
 } from "../ui/skeletons";
 import { Suspense } from "react";
 
-export default async function Page() {
+export default function Page() {
   // const data = await sql<Revenue>`SELECT * FROM revenue`;
   // const revenue = data.rows;
 
@@ -41,17 +41,10 @@ export default async function Page() {
           value={numberOfCustomers}
           type="customers"
         /> */}
-        <Suspense fallback={<CardsSkeleton />}>
-          <CardWrapper />
-        </Suspense>
       </div>
       <div className="mt-6 grid grid-cols-1 gap-6 md:grid-cols-4 lg:grid-cols-8">
-        <Suspense fallback={<RevenueChartSkeleton />}>
-          <RevenueChart />
-        </Suspense>
-        <Suspense fallback={<LatestInvoicesSkeleton />}>
-          <LatestInvoices />
-        </Suspense>
+        {/* <RevenueChart revenue={revenue} /> */}
+        {/* <LatestInvoices latestInvoices={latestInvoices} /> */}
       </div>
     </main>
   );
